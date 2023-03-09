@@ -1,26 +1,9 @@
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  Flex,
-  HStack,
-  IconButton,
-  Input,
-  SkeletonText,
-  Text,
-} from '@chakra-ui/react'
-import { FaLocationArrow, FaTimes } from 'react-icons/fa'
+import { Box, Button, ButtonGroup, Flex, HStack, IconButton, Input, SkeletonText, Text } from '@chakra-ui/react';
+import { FaLocationArrow, FaTimes } from 'react-icons/fa';
+import { useJsApiLoader, GoogleMap, Marker, Autocomplete, DirectionsRenderer } from '@react-google-maps/api';
+import { useRef, useState } from 'react';
 
-import {
-  useJsApiLoader,
-  GoogleMap,
-  Marker,
-  Autocomplete,
-  DirectionsRenderer,
-} from '@react-google-maps/api'
-import { useRef, useState } from 'react'
-
-const center = { lat: 48.8584, lng: 2.2945 }
+const center = { lat: 39.9998, lng: 124.3560 }
 
 function App() {
   const { isLoaded } = useJsApiLoader({
